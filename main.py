@@ -13,7 +13,7 @@ s.listen()
 s.tracer(0)
 LD = LineDrawer()
 turtle = Player()
-turtle.color("magenta")
+turtle.color("black")
 s.onkeypress(turtle.Move, "Up")
 carArray = [Car_Manager()]
 score = Scoreboard()
