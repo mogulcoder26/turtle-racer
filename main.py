@@ -1,39 +1,35 @@
-from turtle import Turtle,Screen
+from turtle import Turtle, Screen, delay
 from Player import Player
 from Car_Manager import Car_Manager
+from LineDrawers import LineDrawer
 import time
+
 s = Screen()
-s.setup(width=600,height=600)
+s.setup(width=600, height=600)
 s.bgcolor("#FFF")
 s.title("Turtle Racer")
 s.listen()
 s.tracer(0)
-
+LD = LineDrawer()
 turtle = Player()
+s.onkeypress(turtle.Move, "Up")
+carArray = [Car_Manager()]
 
-carArray = []
 
 game_is_on = True
 i = 0
-        
-carArray = [Car_Manager() for _ in range(0,10)]
+while game_is_on:
+    time.sleep(0.1)
 
-i = 0
-
-def update(): 
-    time.sleep(0.01)
-    s.onkeypress(turtle.Move,"Up")
+    i+=1
     s.update()
-    i = 0
-    while i<10:
-        carArray[i].Move()
-        i+=1
-    s.ontimer(update,10)
+    if(i>=6):
+        i=0
+        carArray.append(Car_Manager())
+
+    for car in carArray:
+        car.Move()
     
-    if(turtle.ycor()>290):
-        exit()
-        # game_is_on = False
 
-update()
-
+    
 s.exitonclick()
