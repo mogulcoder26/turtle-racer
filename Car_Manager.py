@@ -9,8 +9,9 @@ class Car_Manager(Turtle):
         self.color(colorArray[randint(0,6)])
         self.penup()
         self.shapesize(stretch_len=2.5)
-        self.goto(randint(20,290),randint(-250,250))
+        self.goto(randint(50,290),randint(-250,250))
         self.speed(0)
+        
         delay(10)
     
     def Move(self):
