@@ -25,12 +25,20 @@ while game_is_on:
 
     i += 1
     s.update()
-    if i >= 6:
+    if i >= 20:
         i = 0
         carArray.append(Car_Manager())
 
     for car in carArray:
         car.Move()
+        if(car.distance(turtle) <25):
+            score.Failure()
+            game_is_on = False
+    
+    if turtle.ycor() > 250:
+        turtle.Reposition()
+        score.Success()
+    
 
 
 s.exitonclick()

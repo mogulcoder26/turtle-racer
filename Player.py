@@ -12,3 +12,6 @@ class Player(Turtle):
 
     def Move(self):
         self.goto(self.xcor(),self.ycor() + 4)
+
+    def Reposition(self):
+        self.goto(0,-280)
