@@ -22,4 +22,8 @@ class Scoreboard(Turtle):
     def Failure(self):
         self.clear()
         self.write(f"Oh No :( Score =  {self.score}",align=ALIGNMENT,font=(FONT,24,'normal'))
+        self.penup()
+        self.goto(0,0)
+        self.pendown()
+        self.write(f"GAME OVER",align=ALIGNMENT,font=(FONT,24,'normal'))
         self.score =0
