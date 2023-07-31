@@ -25,7 +25,7 @@ while game_is_on:
 
     i += 1
     s.update()
-    if i >= 20:
+    if i >= 10:
         i = 0
         carArray.append(Car_Manager())
 
